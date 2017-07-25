@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5AAA14D1F26EDA80024DBC7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5AAA14B1F26EDA80024DBC7 /* Model.xcdatamodeld */; };
+		A5AAA1501F2704FF0024DBC7 /* Weather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AAA14E1F2704FF0024DBC7 /* Weather+CoreDataClass.swift */; };
+		A5AAA1511F2704FF0024DBC7 /* Weather+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AAA14F1F2704FF0024DBC7 /* Weather+CoreDataProperties.swift */; };
 		A5D392751F2481AD00D18192 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D392741F2481AD00D18192 /* AppDelegate.swift */; };
 		A5D3927A1F2481AD00D18192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D392781F2481AD00D18192 /* Main.storyboard */; };
 		A5D3927C1F2481AD00D18192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D3927B1F2481AD00D18192 /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5AAA14C1F26EDA80024DBC7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A5AAA14E1F2704FF0024DBC7 /* Weather+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Weather+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5AAA14F1F2704FF0024DBC7 /* Weather+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Weather+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5D392711F2481AD00D18192 /* WeatherInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D392741F2481AD00D18192 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D392791F2481AD00D18192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 		A5D392681F2481AD00D18192 = {
 			isa = PBXGroup;
 			children = (
+				A5AAA14E1F2704FF0024DBC7 /* Weather+CoreDataClass.swift */,
+				A5AAA14F1F2704FF0024DBC7 /* Weather+CoreDataProperties.swift */,
 				A5D392731F2481AD00D18192 /* WeatherInfo */,
 				A5D392881F2481AD00D18192 /* WeatherInfoTests */,
 				A5D392931F2481AD00D18192 /* WeatherInfoUITests */,
@@ -103,6 +111,7 @@
 			children = (
 				A5D392741F2481AD00D18192 /* AppDelegate.swift */,
 				A5D392A81F25088300D18192 /* Constants.swift */,
+				A5AAA14B1F26EDA80024DBC7 /* Model.xcdatamodeld */,
 				A5D392A41F24FA6600D18192 /* Model */,
 				A5D392A51F24FA6B00D18192 /* View */,
 				A5D392A61F24FA7400D18192 /* Controller */,
@@ -300,9 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AAA1501F2704FF0024DBC7 /* Weather+CoreDataClass.swift in Sources */,
 				A5D392751F2481AD00D18192 /* AppDelegate.swift in Sources */,
 				A5D392A31F24FA4000D18192 /* WeatherSearchViewController.swift in Sources */,
+				A5AAA14D1F26EDA80024DBC7 /* Model.xcdatamodeld in Sources */,
 				A5D392A91F25088300D18192 /* Constants.swift in Sources */,
+				A5AAA1511F2704FF0024DBC7 /* Weather+CoreDataProperties.swift in Sources */,
 				A5D392AB1F25092B00D18192 /* openWeatherParseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +568,7 @@
 				A5D3929B1F2481AD00D18192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5D3929C1F2481AD00D18192 /* Build configuration list for PBXNativeTarget "WeatherInfoTests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +577,7 @@
 				A5D3929E1F2481AD00D18192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5D3929F1F2481AD00D18192 /* Build configuration list for PBXNativeTarget "WeatherInfoUITests" */ = {
 			isa = XCConfigurationList;
@@ -572,8 +586,22 @@
 				A5D392A11F2481AD00D18192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A5AAA14B1F26EDA80024DBC7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A5AAA14C1F26EDA80024DBC7 /* Model.xcdatamodel */,
+			);
+			currentVersion = A5AAA14C1F26EDA80024DBC7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A5D392691F2481AD00D18192 /* Project object */;
 }
