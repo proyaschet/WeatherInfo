@@ -67,7 +67,7 @@ class openWeatherParseClient
         completionHandlerForConvertedData(parsedResult, nil)
     }
 
-    func weather(cityName : String, completionHandlerForWeatherDataByCity : @escaping (_ success : Bool , _ error : String) -> Void)
+    func WeatherDataByCity(cityName : String, completionHandlerForWeatherDataByCity : @escaping (_ success : Bool , _ error : String) -> Void)
     {
          let parameters: [String:AnyObject]? = [openWeather.queryCity:cityName as AnyObject,openWeather.queryAPI:openWeather.appID as AnyObject]
         let _ = self.sessionTaskGetMethod(parameters: parameters!) { (results, error) in
@@ -77,15 +77,159 @@ class openWeatherParseClient
                 return
             }
             
-            
-            guard let jsonCityName = results?["name"] as? String else {
+            guard let parsedOpenWeatherData = results else
+            {
+                print("parse error")
+                return
+            }
+        
+            guard let jsonCityName = parsedOpenWeatherData["name"] as? String else {
                 
                 print("error in guard Statement while getting Name")
                 return completionHandlerForWeatherDataByCity(false, "")
                 
             }
             print(jsonCityName)
-            completionHandlerForWeatherDataByCity(true, "")
+            WeatherData.City = jsonCityName
+            
+            
+            guard let jsonWind = parsedOpenWeatherData["wind"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting Wind  Array Dictionary JSON")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+            
+            
+            guard let jsonWindSpeed = jsonWind["speed"] as? Double else {
+                
+                print("error in guard Statement while getting jsonWindSpeed ")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+           WeatherData.WindSpeed = jsonWindSpeed
+            
+            let jsonWindDeg2 = jsonWind["deg"] as? Double
+            print(jsonWindDeg2)
+            WeatherData.WindDeg = jsonWindDeg2
+            
+            guard let jsonMain = parsedOpenWeatherData["main"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting Main Array Dictionary JSON")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+            guard var jsonMainTemp = jsonMain["temp"] as? Double else {
+                
+                print("error in guard Statement while getting Main Temp")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+            jsonMainTemp = jsonMainTemp/10
+            
+            
+            print(jsonMainTemp)
+            WeatherData.Temperature = jsonMainTemp
+         
+            
+            guard let jsonMainPressure = jsonMain["pressure"] as? Double else {
+                
+                print("error in guard Statement while getting Main pressure")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            WeatherData.Pressure=jsonMainPressure
+            print(WeatherData.Pressure)
+            guard let jsonMainHumidity = jsonMain["humidity"] as? Double else {
+                
+                print("error in guard Statement while getting Main Humidity")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+           
+            
+            
+            guard let jsonMainMinimumTemp = jsonMain["temp_min"] as? Double else {
+                
+                print("error in guard Statement while getting Main Max Temp")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+            WeatherData.MinimumTemp = jsonMainMinimumTemp
+            
+            
+            guard let jsonMainMaximumTemp = jsonMain["temp_max"] as? Double else {
+                
+                print("error in guard Statement while getting Main Min Temp")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+            WeatherData.MaximumTemp = jsonMainMaximumTemp
+            
+            guard let jsonWeather = parsedOpenWeatherData["weather"] as? [[String : Any]] else {
+                
+                print("error in guard Statement while getting weather Array Dictionary JSON")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+            var weatherToday : String!
+            var weatherDescription : String!
+            
+            for data in jsonWeather  {
+                
+               
+                
+                
+                guard let weatherTodayData = data["main"] as? String else {
+                    
+                    print("error in guard Statement while getting Main Min Temp")
+                    return completionHandlerForWeatherDataByCity(false, "")
+                    
+                }
+                weatherToday = weatherTodayData
+                
+                
+                guard let weatherDescriptionData = data["description"] as? String else {
+                    
+                    print("error in guard Statement while getting Main Min Temp")
+                    return completionHandlerForWeatherDataByCity(false, "")
+                    
+                }
+                weatherDescription = weatherDescriptionData
+                
+                
+                
+            }
+            
+            
+            WeatherData.WeatherToday = weatherToday
+            WeatherData.WeatherDescription = weatherDescription
+
+            guard let jsonSystem = parsedOpenWeatherData["sys"] as? NSDictionary else {
+                
+                print("error in guard Statement while getting System Array Dictionary JSON")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            
+            guard let jsonCountryCode = jsonSystem["country"] as? String else {
+                
+                print("error in guard Statement while getting Main Array Dictionary JSON")
+                return completionHandlerForWeatherDataByCity(false, "")
+                
+            }
+            WeatherData.CountryCode = jsonCountryCode
+            
+                       return completionHandlerForWeatherDataByCity(true, "")
+
+            
 
         }
     }

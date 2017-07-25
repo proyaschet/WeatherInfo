@@ -14,8 +14,9 @@ class WeatherSearchViewController: UIViewController {
     @IBOutlet weak var resultDisplay: UILabel!
     @IBOutlet weak var valuePicker: UIPickerView!
     
-    var pickerData :[String] = ["TEMPERATURE","WINDSPEED","WINDDEGREE","PRESSURE","HUMIDITY","MINIMUM TEMPERATURE","MAXIMUM TEMPERATURE"]
-    var selectedValue = "TEMPERATURE"
+    
+    var pickerData :[String] = [pickerConstants.temperature,pickerConstants.WindSpeed,pickerConstants.WindDeg,pickerConstants.Pressure,pickerConstants.Humidity,pickerConstants.MaximumTemp,pickerConstants.MinimumTemp]
+    var selectedValue = pickerConstants.temperature
     
    
     
@@ -31,8 +32,14 @@ class WeatherSearchViewController: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: Any) {
-     let task = openWeatherParseClient.sharedInstance().weather(cityName: "Mumbai") { (success, error) in
+         let cityNameInput = cityName.text!
+        if(cityNameInput.isEmpty)
+        {
+            print("enter text")
+        }
+     let task = openWeatherParseClient.sharedInstance().WeatherDataByCity(cityName: cityNameInput) { (success, error) in
         print(success)
+        
         }
     }
     

@@ -39,6 +39,20 @@ import Foundation
         
     }
 
+  struct pickerConstants
+  {
+   
+    static var temperature = "TEMPERATURE"
+    static var MinimumTemp = "MINIMUM TEMPERATURE"
+    static var MaximumTemp = "MAXIMUM TEMPERATURE"
+    static var Humidity = "HUMIDITY"
+    static var WindSpeed = "WINDSPEED"
+    static var WindDeg = "WINDDEGREE"
+    static var Pressure = "PRESSURE"
+    
+    
+   }
+
 struct ErrorIs {
     static let request = "There was an error with your request: "
     static let statusCode = "Your request returned a status code other than 2xx!"
@@ -48,7 +62,7 @@ struct ErrorIs {
 
 struct NetworkError {
     static let base = "There was an error in API"
-    static let flickr = "An error occured trying to retrieve data from sAPI"
+    static let openWeather = "An error occured trying to retrieve data from API"
     static let status = "There was a status error"
     static let statusCompletion = "A status code error occured from  API"
     static let parsing = "There was an error while parsing"
