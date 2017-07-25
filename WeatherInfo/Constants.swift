@@ -7,9 +7,7 @@
 //
 
 import Foundation
-//http://api.openweathermap.org/data/2.5/weather?q=Kolkata&APPID=44f391e1c3700a92f35198240c3a0ba2
-//http://api.openweathermap.org/data/2.5/weather/??q%3D=city&%26APPID%3D=9625dc08ac24d297c991ffa94b880706
-//http://api.openweathermap.org/data/2.5/weather?q%3D=Kolkata&%26APPID%3D=44f391e1c3700a92f35198240c3a0ba2
+
 
     struct openWeather
     {
@@ -52,6 +50,12 @@ import Foundation
     
     
    }
+
+struct Animation {
+    struct Duration {
+        static let medium = 0.5
+    }
+}
 
 struct ErrorIs {
     static let request = "There was an error with your request: "

@@ -13,6 +13,7 @@ class WeatherSearchViewController: UIViewController {
     @IBOutlet weak var cityName: UITextField!
     @IBOutlet weak var resultDisplay: UILabel!
     @IBOutlet weak var valuePicker: UIPickerView!
+    @IBOutlet weak var detailInfo: UIBarButtonItem!
     
     
     var pickerData :[String] = [pickerConstants.temperature,pickerConstants.WindSpeed,pickerConstants.WindDeg,pickerConstants.Pressure,pickerConstants.Humidity,pickerConstants.MaximumTemp,pickerConstants.MinimumTemp]
@@ -35,12 +36,27 @@ class WeatherSearchViewController: UIViewController {
          let cityNameInput = cityName.text!
         if(cityNameInput.isEmpty)
         {
-            print("enter text")
+            showAlert(title: "Input Error", message: "No city name found")
+            return
         }
-     let task = openWeatherParseClient.sharedInstance().WeatherDataByCity(cityName: cityNameInput) { (success, error) in
-        print(success)
+        showActivityIndicator()
+        detailInfo.isEnabled = false
+     let task = openWeatherParseClient.sharedInstance().WeatherDataByCity(cityName: cityNameInput) { (weatherInfo,success, error) in
         
+        if(success == true)
+        {
+            
+            self.selectedResult(weatherInfo: weatherInfo)
+            self.hideActivityIndicator()
+            self.detailInfo.isEnabled = true
+ 
         }
+        else{
+            self.hideActivityIndicator()
+            self.detailInfo.isEnabled = true
+            self.showAlert(title: NetworkError.openWeather, message: "Network Connection Problem")
+        }
+     }
     }
     
 
@@ -70,5 +86,118 @@ extension WeatherSearchViewController: UIPickerViewDataSource,UIPickerViewDelega
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedValue=pickerData[row]
+    }
+}
+
+extension WeatherSearchViewController
+{
+    func selectedResult(weatherInfo : Weather?)
+    {
+        print(selectedValue)
+        if(selectedValue == pickerConstants.temperature)
+        {
+            if let temp = weatherInfo?.temperature
+            {
+                resultDisplay.text = "\(selectedValue) in \(cityName.text!) is \(temp)"
+            }
+            else
+            {
+                resultDisplay.text = "\(selectedValue)NOT FOUND"
+            }
+        }
+        else if(selectedValue == pickerConstants.WindSpeed)
+        {
+         if let speed = weatherInfo?.windSpeed
+         {
+            resultDisplay.text = "\(selectedValue) in \(cityName.text!) is \(speed)"
+         }
+            else
+         {
+            resultDisplay.text = "\(selectedValue) NOT FOUND"
+            }
+        }
+        
+        else if(selectedValue == pickerConstants.Humidity)
+        {
+            if let humid = weatherInfo?.humidity
+            {
+                resultDisplay.text = "\(selectedValue) in \(cityName.text!) is \(humid)"
+            }
+            else
+            {
+                resultDisplay.text = "\(selectedValue) NOT FOUND"
+            }
+        }
+        
+        else if(selectedValue == pickerConstants.MaximumTemp)
+        {
+            if let matemp = weatherInfo?.maximumTemperature
+            {
+                resultDisplay.text = "\(selectedValue) in \(cityName.text!) is \(matemp)"
+            }
+            else
+            {
+                resultDisplay.text = "\(selectedValue) NOT FOUND"
+            }
+        } else if(selectedValue == pickerConstants.MinimumTemp)
+        {
+            if let  mitemp = weatherInfo?.minimumTemperature
+            {
+                resultDisplay.text = "\(selectedValue) in \(cityName.text!) is \(mitemp)"
+            }
+            else
+            {
+                resultDisplay.text = "\(selectedValue) NOT FOUND"
+            }
+        } else if(selectedValue == pickerConstants.Pressure)
+        {
+            if let pressure = weatherInfo?.pressure
+            {
+                resultDisplay.text = "\(selectedValue) in \(cityName.text!) is \(pressure)"
+            }
+            else
+            {
+                resultDisplay.text = "\(selectedValue) NOT FOUND"
+            }
+        } else if(selectedValue == pickerConstants.WindDeg)
+        {
+            if let degree = weatherInfo?.windDegree
+            {
+                resultDisplay.text = "\(selectedValue) in \(cityName.text!) is \(degree)"
+            }
+            else
+            {
+                resultDisplay.text = "\(selectedValue) NOT FOUND"
+            }
+        }
+        else
+        {
+            resultDisplay.text = "Error found"
+        }
+            }
+}
+
+extension WeatherSearchViewController
+{
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(WeatherSearchViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+   
+    
+    func showAlert(title : String , message: String) {
+        let alertDisplay = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let pressOK = UIAlertAction(title: "OK", style: .default){
+            _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertDisplay.addAction(pressOK)
+        present(alertDisplay, animated: true, completion: nil)
     }
 }
