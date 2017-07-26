@@ -43,6 +43,7 @@ extension UIViewController: ActivityIndicatorDelegate {
     internal func hideActivityIndicator() {
         activityIndicator?.activityIndicator.stopAnimating()
         Animations.hide(view: activityIndicator!, alpha: 0)
+        
     }
 }
 

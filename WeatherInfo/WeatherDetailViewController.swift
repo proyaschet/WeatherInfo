@@ -25,7 +25,7 @@ class WeatherDetailViewController: UIViewController {
         super.viewDidLoad()
        title = "\(weatherData.cityName!) WeatherInfo"
         loadFromCoreData(data: weatherData)
-        // Do any additional setup after loading the view.
+       
     }
 
 

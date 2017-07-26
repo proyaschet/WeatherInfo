@@ -14,8 +14,8 @@ protocol AnimationView {
 
 final class Animations: AnimationView {
     static func hide(view: UIView, alpha: Int) {
-        let duration = Animation.Duration.medium
-        UIView.animate(withDuration: TimeInterval(duration),
+        //let duration = Animation.Duration.medium
+        UIView.animate(withDuration: TimeInterval(0.0),
                        delay: TimeInterval(0),
                        options: [UIViewAnimationOptions.allowUserInteraction, UIViewAnimationOptions.beginFromCurrentState],
                        animations: {

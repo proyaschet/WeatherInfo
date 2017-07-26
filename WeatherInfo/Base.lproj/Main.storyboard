@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zH3-O2-yPg">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -34,7 +34,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cil-Ke-ozT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wQx-SC-ud7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="city name eg:Dublin,Toronto,Delhi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNf-UA-cum">
@@ -58,13 +58,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results to display" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="32" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnr-ko-iO0">
-                                <rect key="frame" x="0.0" y="222.5" width="320" height="109.5"/>
+                                <rect key="frame" x="0.0" y="222.5" width="320" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleAspectFit" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="FYk-IR-GmS">
-                                <rect key="frame" x="0.0" y="342" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="256" width="320" height="214"/>
                                 <connections>
                                     <outlet property="dataSource" destination="4jK-EQ-90E" id="Pc9-a8-MuN"/>
                                     <outlet property="delegate" destination="4jK-EQ-90E" id="0Q0-pY-hOW"/>
@@ -121,7 +121,7 @@
             <objects>
                 <tableViewController id="6CC-vA-Im5" customClass="WeatherInfoTableViewController" customModule="WeatherInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ABQ-3E-yzz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -129,7 +129,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nlg-sx-i21" id="Xq6-Nb-QVR">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -157,143 +157,143 @@
                         <viewControllerLayoutGuide type="bottom" id="qlz-9S-xgQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9y0-d6-UYE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fyG-6Y-4uS">
-                                <rect key="frame" x="12.5" y="112" width="295" height="344"/>
+                                <rect key="frame" x="51" y="101" width="218" height="278"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yNc-uk-Bn3">
-                                        <rect key="frame" x="0.0" y="0.0" width="138.5" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yNc-uk-Bn3">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="36.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXj-jN-MmV">
-                                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="53" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osX-iP-wXb">
-                                                <rect key="frame" x="112.5" y="0.0" width="26" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="73" y="0.0" width="22" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Jt5-lV-TT8">
-                                        <rect key="frame" x="0.0" y="43" width="195" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jt5-lV-TT8">
+                                        <rect key="frame" x="0.0" y="36.5" width="137.5" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPx-L6-giw">
-                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="220" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97z-FQ-JMc">
-                                                <rect key="frame" x="151.5" y="0.0" width="43.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="102" y="0.0" width="35.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="jgH-VP-X12">
-                                        <rect key="frame" x="0.0" y="86" width="212.5" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jgH-VP-X12">
+                                        <rect key="frame" x="0.0" y="71" width="151.5" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKr-Zi-6af">
-                                                <rect key="frame" x="0.0" y="0.0" width="104.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kn-f8-Qcd">
-                                                <rect key="frame" x="154.5" y="0.0" width="58" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="104.5" y="0.0" width="47" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WYJ-cO-UEw">
-                                        <rect key="frame" x="0.0" y="129" width="225" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WYJ-cO-UEw">
+                                        <rect key="frame" x="0.0" y="105.5" width="161.5" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-oo-jyE">
-                                                <rect key="frame" x="0.0" y="0.0" width="146" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="118" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJx-4g-43Q">
-                                                <rect key="frame" x="196" y="0.0" width="29" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="138" y="0.0" width="23.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Eup-xa-C9Q">
-                                        <rect key="frame" x="0.0" y="172" width="295" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Eup-xa-C9Q">
+                                        <rect key="frame" x="0.0" y="140" width="218" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQR-gx-U1F">
-                                                <rect key="frame" x="0.0" y="0.0" width="130.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="105.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear sky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2r-7J-NNs">
-                                                <rect key="frame" x="180.5" y="0.0" width="114.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="125.5" y="0.0" width="92.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="anx-O7-MXf">
-                                        <rect key="frame" x="0.0" y="215" width="238" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="anx-O7-MXf">
+                                        <rect key="frame" x="0.0" y="174.5" width="172.5" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaL-py-ImC">
-                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear Sky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vu-FE-Okj">
-                                                <rect key="frame" x="119.5" y="0.0" width="118.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="76.5" y="0.0" width="96" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="aZ5-tG-fqQ">
-                                        <rect key="frame" x="0.0" y="258" width="247" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aZ5-tG-fqQ">
+                                        <rect key="frame" x="0.0" y="209" width="179.5" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind degree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIT-GT-YqQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="153.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faQ-Zg-UhY">
-                                                <rect key="frame" x="203.5" y="0.0" width="43.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="144" y="0.0" width="35.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nb4-Yr-b0N">
-                                        <rect key="frame" x="0.0" y="301" width="241" height="43"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nb4-Yr-b0N">
+                                        <rect key="frame" x="0.0" y="243.5" width="175" height="34.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKH-Rp-cQf">
-                                                <rect key="frame" x="0.0" y="0.0" width="147.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="334" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAu-hI-JRX">
-                                                <rect key="frame" x="197.5" y="0.0" width="43.5" height="43"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="26"/>
+                                                <rect key="frame" x="139.5" y="0.0" width="35.5" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -322,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhU-tI-UAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608.75" y="136.26760563380282"/>
+            <point key="canvasLocation" x="1764" y="-96"/>
         </scene>
     </scenes>
 </document>

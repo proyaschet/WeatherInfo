@@ -23,7 +23,8 @@ class WeatherSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+          hideKeyboardWhenTappedAround()
+        cityName.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -41,20 +42,21 @@ class WeatherSearchViewController: UIViewController {
         }
         showActivityIndicator()
         detailInfo.isEnabled = false
-     let task = openWeatherParseClient.sharedInstance().WeatherDataByCity(cityName: cityNameInput) { (weatherInfo,success, error) in
-        
+     _ = openWeatherParseClient.sharedInstance().WeatherDataByCity(cityName: cityNameInput) { (weatherInfo,success, error) in
+        self.showActivityIndicator()
         if(success == true)
         {
             
-            self.selectedResult(weatherInfo: weatherInfo)
             self.hideActivityIndicator()
+            self.selectedResult(weatherInfo: weatherInfo)
+            
             self.detailInfo.isEnabled = true
  
         }
         else{
             self.hideActivityIndicator()
             self.detailInfo.isEnabled = true
-            self.showAlert(title: NetworkError.openWeather, message: "Network Connection Problem")
+            self.showAlert(title: "NetworkError", message: error)
         }
      }
     }
@@ -139,7 +141,8 @@ extension WeatherSearchViewController
             {
                 resultDisplay.text = "\(selectedValue) NOT FOUND"
             }
-        } else if(selectedValue == pickerConstants.MinimumTemp)
+        }
+        else if(selectedValue == pickerConstants.MinimumTemp)
         {
             if let  mitemp = weatherInfo?.minimumTemperature
             {
@@ -149,7 +152,9 @@ extension WeatherSearchViewController
             {
                 resultDisplay.text = "\(selectedValue) NOT FOUND"
             }
-        } else if(selectedValue == pickerConstants.Pressure)
+        }
+        
+        else if(selectedValue == pickerConstants.Pressure)
         {
             if let pressure = weatherInfo?.pressure
             {
@@ -159,7 +164,9 @@ extension WeatherSearchViewController
             {
                 resultDisplay.text = "\(selectedValue) NOT FOUND"
             }
-        } else if(selectedValue == pickerConstants.WindDeg)
+        }
+        
+        else if(selectedValue == pickerConstants.WindDeg)
         {
             if let degree = weatherInfo?.windDegree
             {
@@ -175,6 +182,15 @@ extension WeatherSearchViewController
             resultDisplay.text = "Error found"
         }
             }
+}
+
+extension WeatherSearchViewController : UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
 }
 
 extension WeatherSearchViewController
